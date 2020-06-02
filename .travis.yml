@@ -50,6 +50,8 @@ jobs:
         verbose: true
         skip_cleanup: true
         keep_history: true
+        on:
+          all_branches: true
   allow_failures:
     - stage: build-stable
     - stage: build-dev
