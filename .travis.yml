@@ -9,11 +9,10 @@ jobs:
     - stage: build-dev
       if: branch =~ dev-
       script:
-        - git clone -b gh-pages https://github.com/albizon/charts pages 
-	- mkdir -p files-to-gh-pages/stable
+        - mkdir -p files-to-gh-pages/stable
         - mkdir -p files-to-gh-pages/dev   
-        - cp -r	pages/stable files-to-gh-pages
-        - cp -r pages/dev files-to-gh-pages
+        - wget -r https://albizon.github.io/charts/stable -O files-to-gh-pages/stable 
+        - wget -r https://albizon.github.io/charts/dev  -O files-to-gh-pages/dev
         - echo $(pwd)
         - bash ./build-dev.sh
         - cd files-to-gh-pages/dev
@@ -22,11 +21,10 @@ jobs:
     - stage: build-stable
       if: branch = master
       script:
-        - git clone -b gh-pages https://github.com/albizon/charts pages
         - mkdir -p files-to-gh-pages/stable
         - mkdir -p files-to-gh-pages/dev
-        - cp -r pages/stable files-to-gh-pages
-        - cp -r	pages/dev files-to-gh-pages
+        - wget -r https://albizon.github.io/charts/stable -O files-to-gh-pages/stable
+        - wget -r https://albizon.github.io/charts/dev -O files-to-gh-pages/dev
         - echo $(pwd)
         - bash ./helm-packages.sh
         - cd files-to-gh-pages/stable
