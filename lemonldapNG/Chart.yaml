@@ -1,0 +1,13 @@
+name: lemonldapNG
+description: A deployement of lemonldap NG Single Sign-on service
+version: 0.1.0-dev
+keywords:
+  - http
+  - sso
+  - www
+  - web
+home: https://github.com/albizon/charts/lemonldapNG
+sources:
+  - https://github.com/albizon/charts/lemonldapNG
+maintainers:
+  - name: abizon

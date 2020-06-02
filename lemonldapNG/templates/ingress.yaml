@@ -1,0 +1,47 @@
+{{- if .Values.ingress.enabled -}}
+{{- $serviceNamePortail := include "lemonldapNG.portail.fullname" . -}}
+{{- $servicePortPortail := 80 -}}
+{{- $serviceNameManager := include "lemonldapNG.manager.fullname" . -}}
+{{- $servicePortManager := 80 -}}
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: {{ template "lemonldapNG.fullname" . }}
+  labels:
+    app: {{ template "lemonldapNG.name" . }}
+    chart: {{ template "lemonldapNG.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+{{- if .Values.ingress.labels }}
+{{ .Values.ingress.labels | toYaml | trimSuffix "\n"| indent 4 -}}
+{{- end}}
+{{- if .Values.ingress.annotations }}
+  annotations:
+{{ .Values.ingress.annotations | toYaml | trimSuffix "\n" | indent 4 -}}
+{{- end }}
+spec:
+{{- if .Values.ingress.hosts }}
+  rules:
+  {{- range $host := .Values.ingress.hosts }}
+  - host: {{ $host | quote }}
+    http:
+      paths:
+        - path: "/portail"
+          backend:
+            serviceName: {{ $serviceNamePortail }}
+            servicePort: {{ $servicePortPortail }}
+        - path: "/manager"
+          backend:
+            serviceName: {{ $serviceNameManager }}
+            servicePort: {{ $servicePortManager }}
+  {{- end -}}
+  {{- with .Values.ingress.additionalRules }}
+{{ toYaml . | indent 2 }}
+  {{- end }}
+
+{{- end -}}
+  {{- if .Values.ingress.tls }}
+  tls:
+{{ toYaml .Values.ingress.tls | indent 4 }}
+  {{- end -}}
+{{- end -}}
