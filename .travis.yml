@@ -36,6 +36,9 @@ jobs:
         - cd files-to-gh-pages/stable
         - helm repo index .
         - ls -ltr
+  allow_failures:
+    - stage: build-stable
+    - stage: build-dev
 deploy:
   provider: pages
   github_token: $GITHUB_TOKEN
