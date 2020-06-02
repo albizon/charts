@@ -1,4 +1,4 @@
-apiVersion: v1
+apiVersion: v1.16
 kind: Service
 metadata:
 {{- if .Values.manager.service.annotations }}
