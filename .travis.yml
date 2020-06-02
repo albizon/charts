@@ -40,6 +40,7 @@ jobs:
         - helm repo index .
         - ls -ltr
     - stage: deploy-gh-pages
+      if: branch != gh-pages
       script: skip
       deploy:
         provider: pages
@@ -48,14 +49,7 @@ jobs:
         target_branch: gh-pages
         verbose: true
         skip_cleanup: true
+        keep_history: true
   allow_failures:
     - stage: build-stable
     - stage: build-dev
-#deploy:
-#  provider: pages
-#  github_token: $GITHUB_TOKEN
-#  local_dir: files-to-gh-pages
-#  target_branch: gh-pages
-#  verbose: true
-#  skip_cleanup: true
-#  keep_history: true
