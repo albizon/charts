@@ -1,4 +1,7 @@
 language: minimal
+cache:
+  directories:
+   - /home/travis/build/albizon/charts/files-to-gh-pages
 
 before_install:
   - curl -L https://git.io/get_helm.sh | bash
@@ -36,13 +39,6 @@ jobs:
         - cd files-to-gh-pages/stable
         - helm repo index .
         - ls -ltr
-      deploy:
-        provider: pages
-        github_token: $GITHUB_TOKEN
-        local_dir: files-to-gh-pages
-        target_branch: gh-pages
-	verbose: true
-        skip_cleanup: true
     - stage: deploy-gh-pages
       script: skip
       deploy:
