@@ -3,6 +3,6 @@ for d in ./* ; do
         if test -f "$FILE"; then
                 cd $d
                 bash ./build.sh
-                helm package $d -d files-to-gh-pages/dev
+                helm package ./ -d files-to-gh-pages/dev
         fi
 done
