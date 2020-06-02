@@ -8,8 +8,8 @@ Personnal applications, ready to launch on Kubernetes using [Kubernetes Helm](ht
 
 ```bash
 $ helm repo add albizon https://albizon.github.io/charts/stable
-$ helm search repo abizon
-$ helm install my-release abizon/<chart>
+$ helm search repo albizon
+$ helm install my-release albizon/<chart>
 ```
 
 ## Before you begin
@@ -43,7 +43,7 @@ $ helm repo add albizon-dev https://albizon.github.io/charts/dev
 
 ### Using Helm
 
-Once you have installed the Helm client, you can deploy a Bitnami Helm Chart into a Kubernetes cluster.
+Once you have installed the Helm client, you can deploy a Helm Chart into a Kubernetes cluster.
 
 Please refer to the [Quick Start guide](https://helm.sh/docs/intro/quickstart/) if you wish to get running in just a few commands, otherwise the [Using Helm Guide](https://helm.sh/docs/intro/using_helm/) provides detailed instructions on how to use the Helm client to manage packages on your Kubernetes cluster.
 
