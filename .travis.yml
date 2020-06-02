@@ -25,14 +25,14 @@ jobs:
         - cd files-to-gh-pages/stable
         - helm repo index .
         - ls -ltr
-    - stage: deploy
-      provider: pages
-      github_token: $GITHUB_TOKEN
-      local_dir: files-to-gh-pages/stable
-      target_branch: gh-pages
-      verbose: true
-      cleanup: false
-      keep_history: true
+#    - stage: deploy
+#      provider: pages
+#      github_token: $GITHUB_TOKEN
+#      local_dir: files-to-gh-pages/stable
+#      target_branch: gh-pages
+#      verbose: true
+#      cleanup: false
+#      keep_history: true
 
 #script:
 #  - mkdir -p files-to-gh-pages/stable
@@ -42,13 +42,11 @@ jobs:
 #  - helm repo index .
 #  - ls -ltr
 
-#deploy:
-#  provider: pages
-#  github_token: $GITHUB_TOKEN
-#  local_dir: files-to-gh-pages/stable
-#  target_branch: gh-pages
-#  verbose: true
-#  skip_cleanup: true
-#  keep_history: true
-#  on:
-#    branche: master
+deploy:
+  provider: pages
+  github_token: $GITHUB_TOKEN
+  local_dir: files-to-gh-pages/stable
+  target_branch: gh-pages
+  verbose: true
+  cleanup: false
+  keep_history: true
