@@ -5,21 +5,50 @@ before_install:
   - curl -L https://git.io/get_helm.sh | bash
   - helm init --client-only
 
-script:
-  - mkdir -p files-to-gh-pages/stable
-  - echo $(pwd)
-  - bash ./helm-packages.sh
-  - cd files-to-gh-pages/stable
-  - helm repo index .
-  - ls -ltr
+jobs:
+  include:
+    - stage: build-dev
+      if: branch = dev-*
+      script:
+        - mkdir -p files-to-gh-pages/dev
+        - echo $(pwd)
+        - bash ./build-dev.sh
+        - cd files-to-gh-pages/dev
+        - helm repo index .
+        - ls -ltr
+    - stage: build-stable
+      if: branch = master
+      script:
+        - mkdir -p files-to-gh-pages/stable
+        - echo $(pwd)
+        - bash ./helm-packages.sh
+        - cd files-to-gh-pages/stable
+        - helm repo index .
+        - ls -ltr
+    - stage: deploy
+      provider: pages
+      github_token: $GITHUB_TOKEN
+      local_dir: files-to-gh-pages/stable
+      target_branch: gh-pages
+      verbose: true
+      cleanup: false
+      keep_history: true
 
-deploy:
-  provider: pages
-  github_token: $GITHUB_TOKEN
-  local_dir: files-to-gh-pages/stable
-  target_branch: gh-pages
-  verbose: true
-  skip_cleanup: true
-  keep_history: true
-  on:
-    branche: master
+#script:
+#  - mkdir -p files-to-gh-pages/stable
+#  - echo $(pwd)
+#  - bash ./helm-packages.sh
+#  - cd files-to-gh-pages/stable
+#  - helm repo index .
+#  - ls -ltr
+
+#deploy:
+#  provider: pages
+#  github_token: $GITHUB_TOKEN
+#  local_dir: files-to-gh-pages/stable
+#  target_branch: gh-pages
+#  verbose: true
+#  skip_cleanup: true
+#  keep_history: true
+#  on:
+#    branche: master

@@ -1,0 +1,1 @@
+echo "lemonLdapNG chart build !"
