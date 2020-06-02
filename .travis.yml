@@ -36,14 +36,15 @@ jobs:
         - cd files-to-gh-pages/stable
         - helm repo index .
         - ls -ltr
-    - stage: deploy
-      provider: pages
-      github_token: $GITHUB_TOKEN
-      local_dir: files-to-gh-pages
-      target_branch: gh-pages
-      verbose: true
-      skip_cleanup: true
-      skip_cleanup: true
+    - stage: deploy-gh-pages
+      script: skip
+      deploy:
+        provider: pages
+        github_token: $GITHUB_TOKEN
+        local_dir: files-to-gh-pages
+        target_branch: gh-pages
+        verbose: true
+        skip_cleanup: true
   allow_failures:
     - stage: build-stable
     - stage: build-dev
