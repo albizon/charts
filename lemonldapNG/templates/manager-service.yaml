@@ -14,7 +14,9 @@ metadata:
 spec:
 # Provides options for the service so chart users have the full choice
   type: "{{ .Values.manager.service.type }}"
+{{- if .Values.manager.service.clusterIP }}
   clusterIP: "{{ .Values.manager.service.clusterIP }}"
+{{- end }}
 {{- if .Values.manager.service.externalIPs }}
   externalIPs:
 {{ toYaml .Values.manager.service.externalIPs | indent 4 }}
