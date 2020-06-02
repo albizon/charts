@@ -8,7 +8,7 @@ before_install:
 jobs:
   include:
     - stage: build-dev
-      if: branch = dev-*
+      if: branch =~ ^dev-$
       script:
         - mkdir -p files-to-gh-pages/dev
         - echo $(pwd)
