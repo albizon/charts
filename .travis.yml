@@ -8,7 +8,7 @@ before_install:
 script:
   - mkdir -p files-to-gh-pages/stable
   - echo $(pwd)
-  - bash ./charts/helm-packages.sh
+  - bash ./helm-packages.sh
   - cd files-to-gh-pages/stable
   - helm repo index .
   - ls -ltr
