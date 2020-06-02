@@ -1,9 +1,9 @@
 apiVersion: v1
 entries:
   lemonldapNG:
-  - created: "2020-06-02T20:45:18.664711889Z"
+  - created: "2020-06-02T20:58:06.435790529Z"
     description: A deployement of lemonldap NG Single Sign-on service
-    digest: f2bd8f0c24ab829dd94e95fb214685a4649f307f891efeda6cb5fd3a6adb7ece
+    digest: 61b0796ea6dcb70f12a6339d28583877eb2511e12ce627cd185a7b3c55d606cd
     home: https://github.com/albizon/charts/lemonldapNG
     keywords:
     - http
@@ -18,4 +18,4 @@ entries:
     urls:
     - lemonldapNG-0.1.0-dev.tgz
     version: 0.1.0-dev
-generated: "2020-06-02T20:45:18.663101235Z"
+generated: "2020-06-02T20:58:06.43508308Z"
