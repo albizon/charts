@@ -16,14 +16,6 @@ jobs:
         - cd files-to-gh-pages/dev
         - helm repo index .
         - ls -ltr
-#      deploy:
-#        provider: pages
-#        github_token: $GITHUB_TOKEN
-#        local_dir: files-to-gh-pages
-#        target_branch: gh-pages
-#        verbose: true
-#        cleanup: false
-#        keep_history: true
     - stage: build-stable
       if: branch = master
       script:
@@ -33,30 +25,6 @@ jobs:
         - cd files-to-gh-pages/stable
         - helm repo index .
         - ls -ltr
-#       deploy:
-#        provider: pages
-#        github_token: $GITHUB_TOKEN
-#        local_dir: files-to-gh-pages
-#        target_branch: gh-pages
-#        verbose: true
-#        cleanup: false
-#        keep_history: true
-#    - stage: deploy
-#      provider: pages
-#      github_token: $GITHUB_TOKEN
-#      local_dir: files-to-gh-pages/stable
-#      target_branch: gh-pages
-#      verbose: true
-#      cleanup: false
-#      keep_history: true
-
-#script:
-#  - mkdir -p files-to-gh-pages/stable
-#  - echo $(pwd)
-#  - bash ./helm-packages.sh
-#  - cd files-to-gh-pages/stable
-#  - helm repo index .
-#  - ls -ltr
 deploy:
   provider: pages
   github_token: $GITHUB_TOKEN
