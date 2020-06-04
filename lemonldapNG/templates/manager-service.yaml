@@ -9,7 +9,7 @@ metadata:
     app: {{ template "lemonldapNG.name" . }}
     chart: {{ .Chart.Name }}-{{ .Chart.Version }}
     heritage: {{ .Release.Service | quote }}
-#    release: {{ .Release.Name | quote }}
+    release: {{ .Release.Name | quote }}
   name: {{ template "lemonldapNG.manager.fullname" . }}
 spec:
 # Provides options for the service so chart users have the full choice
