@@ -38,4 +38,3 @@ spec:
       {{- end }}
   selector:
     app: {{ template "lemonldapNG.portail.name" . }}
-release: {{ .Release.Name }}

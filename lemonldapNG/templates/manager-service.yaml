@@ -38,4 +38,3 @@ spec:
       {{- end }}
   selector:
     app: {{ template "lemonldapNG.manager.name" . }}
-release: {{ .Release.Name }}
