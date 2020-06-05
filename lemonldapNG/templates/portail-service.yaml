@@ -14,7 +14,9 @@ metadata:
 spec:
 # Provides options for the service so chart users have the full choice
   type: "{{ .Values.portail.service.type }}"
+{{- if .Values.portail.service.clusterIP }}
   clusterIP: "{{ .Values.portail.service.clusterIP }}"
+{{- end }}
 {{- if .Values.portail.service.externalIPs }}
   externalIPs:
 {{ toYaml .Values.portail.service.externalIPs | indent 4 }}
@@ -36,4 +38,3 @@ spec:
       {{- end }}
   selector:
     app: {{ template "lemonldapNG.portail.name" . }}
-release: {{ .Release.Name }}

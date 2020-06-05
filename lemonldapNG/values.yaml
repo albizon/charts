@@ -13,13 +13,13 @@ portail:
   resources: {}
   nodeSelector: {}
   service:
-    annotations: {}
-    clusterIP: ""
-    externalIPs: []
-    loadBalancerIP: ""
-    loadBalancerSourceRanges: []
+#    annotations: {}
+#    clusterIP: ""
+#    externalIPs: []
+#    loadBalancerIP: ""
+#    loadBalancerSourceRanges: []
     type: ClusterIP
-    nodePort: ""
+#    nodePort: ""
     
 manager:
   image:
@@ -32,13 +32,13 @@ manager:
   resources: {}
   nodeSelector: {}
   service:
-    annotations: {}
-    clusterIP: ""
-    externalIPs: []
-    loadBalancerIP: ""
-    loadBalancerSourceRanges: []
+#    annotations: {}
+#    clusterIP: ""
+#    externalIPs: []
+#    loadBalancerIP: ""
+#    loadBalancerSourceRanges: []
     type: ClusterIP
-    nodePort: ""
+#    nodePort: ""
     
 db:
   username: "lemonldap"
