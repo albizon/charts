@@ -6,3 +6,10 @@
 .tests
 .travis.yml
 .github
+.gitignore
+.idea
+.vscode
+*.swp
+*.bak
+*.tmp
+*~

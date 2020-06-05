@@ -1,2 +1,4 @@
 .project
 .pydevproject
+charts
+requirements.lock
