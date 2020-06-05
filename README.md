@@ -1,5 +1,7 @@
 [![Build Status](https://travis-ci.org/albizon/charts.svg?branch=master)](https://travis-ci.org/albizon/charts)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/ce27797732674252bd283f1f9b199cc7)](https://www.codacy.com/manual/alexis.kayak/charts?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=albizon/charts&amp;utm_campaign=Badge_Grade)
+[![Current Tag](https://img.shields.io/github/tag/expressjs/express.svg)](https://github.io/albizon/charts/tags)
+[![Issues](https://img.shields.io/github/issues/badges/shields.svg)](https://github.io/albizon/charts/issues)
 # Personnal helm Library for Kubernetes
 
 Personnal applications, ready to launch on Kubernetes using [Kubernetes Helm](https://github.com/helm/helm).
