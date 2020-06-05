@@ -8,8 +8,8 @@ for d in ./* ; do
 			cd ..
 		fi
 		cat $FILE
-                helm repo add   stable https://kubernetes-charts.storage.googleapis.com/
-                helm repo update
+#                helm repo add   stable https://kubernetes-charts.storage.googleapis.com/
+#                helm repo update
                 helm dep build $d
 		ls -l $d
 		ls -l $d/charts
