@@ -2,3 +2,9 @@
 .pydevproject
 charts
 requirements.lock
+*.swp
+*.bak
+*.tmp
+*~
+.idea
+.vscode

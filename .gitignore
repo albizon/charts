@@ -1,1 +1,12 @@
+files-to-gh-pages
 .project
+.pydevproject
+charts
+requirements.lock
+build
+.idea
+.vscode
+*.swp
+*.bak
+*.tmp
+*~
