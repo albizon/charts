@@ -7,6 +7,9 @@ for d in ./* ; do
                 	bash ./build.sh
 			cd ..
 		fi
-                helm package $d -d files-to-gh-pages/dev
+                helm repo add   stable https://kubernetes-charts.storage.googleapis.com/
+                helm repo update
+                helm dependency update $d
+		helm package $d -d files-to-gh-pages/dev
         fi
 done
