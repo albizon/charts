@@ -15,9 +15,9 @@ jobs:
         - mkdir -p files-to-gh-pages/stable
         - mkdir -p files-to-gh-pages/dev   
         - cd files-to-gh-pages/stable
-        - wget -r https://albizon.github.io/charts/stable && true
+        - wget -r https://albizon.github.io/charts/stable | true
         - cd ../dev 
-        - wget -r https://albizon.github.io/charts/dev && true
+        - wget -r https://albizon.github.io/charts/dev | true
         - cd ../..
         - echo $(pwd)
         - bash ./build-dev.sh
@@ -30,9 +30,9 @@ jobs:
         - mkdir -p files-to-gh-pages/stable
         - mkdir -p files-to-gh-pages/dev
         - cd files-to-gh-pages/stable
-        - wget -r https://albizon.github.io/charts/stable && true
+        - wget -r https://albizon.github.io/charts/stable | true
         - cd ../dev
-        - wget -r https://albizon.github.io/charts/dev && true
+        - wget -r https://albizon.github.io/charts/dev | true
         - cd ../..
         - echo $(pwd)
         - bash ./helm-packages.sh

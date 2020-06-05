@@ -10,7 +10,7 @@ for d in ./* ; do
 		cat $FILE
                 helm repo add   stable https://kubernetes-charts.storage.googleapis.com/
                 helm repo update
-                helm dependency update $d
+                helm dep build $d
 		ls -l $d
 		ls -l $d/charts
 		helm package $d -d files-to-gh-pages/dev

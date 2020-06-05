@@ -3,7 +3,7 @@ for d in ./* ; do
 	if test -f "$FILE"; then
 		helm repo add	stable https://kubernetes-charts.storage.googleapis.com/
 		helm repo update
-		helm dependency update $d
+		helm dep build $d
 		helm package $d -d files-to-gh-pages/stable
 	fi
 done
