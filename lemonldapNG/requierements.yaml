@@ -2,10 +2,10 @@ dependencies:
   - name: postgresql
     version: 0.9.5
     repository: https://kubernetes-charts.storage.googleapis.com/
-    condition: postgresql.enabled
+    condition: conf_backend.enabled
     alias: conf_backend
   - name: redis-ha
     version: 0.9.0
     repository: https://kubernetes-charts.storage.googleapis.com/
-    condition: redis-ha.enabled
+    condition: session_backend.enabled
     alias: session_backend
